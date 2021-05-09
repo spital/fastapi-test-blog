@@ -1,0 +1,4 @@
+.git
+Pipfile*
+.pytest_cache
+__pycache__
