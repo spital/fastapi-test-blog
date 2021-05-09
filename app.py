@@ -67,7 +67,7 @@ async def list_blog_posts(limit:int=10, startfrom:int=0):
     return postdb[startfrom:startfrom+limit]
 
 
-@app.post("/blog", status_code=status.HTTP_201_CREATED, tags=['Auth TODO'])
+@app.post("/blog", status_code=status.HTTP_201_CREATED, tags=['No auth yet'])
 async def create_new_post(post: Post):
     """Creating a new blog post - CREATE"""
     postdb.append(post.dict())
@@ -84,14 +84,14 @@ async def view_post_detail(post_id: int, response: Response):
         return postdb[post_id]
 
 
-@app.put("/blog/{post_id}", status_code = status.HTTP_202_ACCEPTED, tags=['Auth TODO'])
+@app.put("/blog/{post_id}", status_code = status.HTTP_202_ACCEPTED, tags=['No auth yet'])
 async def edit_post(post_id: int, post: Post):
     """Editing blog post - UPDATE - zero based index in blog list"""
     postdb[post_id] = post
     return {"message": "Post has been updated succesfully"}
 
 
-@app.delete("/blog/{post_id}", status_code = status.HTTP_204_NO_CONTENT, tags=['Auth TODO'])
+@app.delete("/blog/{post_id}", status_code = status.HTTP_204_NO_CONTENT, tags=['No auth yet'])
 async def delete_post(post_id: int):
     """Deleting blog post - DELETE - zero based index in blog list"""
     postdb.pop(post_id)

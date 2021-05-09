@@ -1,6 +1,6 @@
 # Simple blog management Rest API in Python using Fast API
 
-Example to get acquainted with the framework, no frontend and no real database, just storing data in the memory.
+A small example to get acquainted with the framework, no frontend and no real database, just storing data in the memory.
 
 Main functions:
 
